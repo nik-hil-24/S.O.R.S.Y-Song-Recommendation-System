@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Style only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+    <title>Spotify Recommendation</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        <i class="fa fa-spotify" style="font-size:50px"></i>
+        &nbsp Spotify Song Recommendation System
+      </h1>
+    </div>
+    <div class="my-container">
+      <div class="grid-container">
+        <div class="grid-item" id="item1">
+          <h1>Recommend Songs!</h1>
+          <form class="form my-form" action="index.html" method="post">
+
+            <div class="form-group">
+              <label class='lable-text' for="playlist-id">Enter Playlist ID:</label>
+              <input type="text" class="form-control input-color" id="playlist-id" placeholder="Playlist ID">
+            </div>
+
+            <div class="form-group">
+              <label class="lable-text" for="number-songs">Number of Songs to Recommend:</label>
+              <select class="form-control" id="number-songs">
+                <option class="bg-color">5</option>
+                <option class="bg-color">10</option>
+                <option class="bg-color">15</option>
+                <option class="bg-color">20</option>
+              </select>
+            </div>
+
+            <div class="form-group submit-div">
+              <center>
+                <button type="button" class="btn submit-button" id="recommend" onclick="onClick()">Recommend!</button>
+              </center>
+            </div>
+
+          </form>
+          <br>
+          <hr>
+          <div class="about">
+            <h2>About The Project</h2>
+            <br>
+            <p>A Song Recommendation System was created with Python, designed to generate tailored song suggestions based on an inputted playlist ID. Through the use of the Spotipy API, key song data was extracted, cleaned, and visualized to enhance the analytical process. The application of sentiment analysis and collaborative filtering techniques further enabled the generation of personalized song recommendations. The final product also included a user-friendly web interface, developed using HTML, CSS, JS, and Flask, for a smooth user experience.</p>
+          </div>
+        </div>
+
+        <div class="grid-item" id="item2">
+          <div id="output" class="result">
+            <h1>Recommendations!</h1>
+            <div id="recommendation-table">Let's Begin!</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
